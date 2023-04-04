@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Villa&Resto</title>
+    <title>Pos</title>
     <!-- Bootstrap CDN-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -18,9 +18,7 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
-    <!-- Font awesome CDN for icons-->
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -28,22 +26,50 @@
         <div class="container-fluid login-wrapper ">
             <div class="row login-row">
                 <div class="col-md-4 login-sec ">
-                    <h2>Villa & Resto</h2>
-                    <p class="text-secondary mb-5"><small>Silahkan mereset password anda</small></p>
+                    <h2>Pos</h2>
+                    <p class="text-secondary"><small>Daftar dengan google atau masukkan data anda</small></p>
+                    @if (session('fail'))
+                        <p class="text-danger"><small>{{ session('fail') }}</small></p>
+                    @endif
                     @if (session('success'))
                         <p class="m-0 mt-3 p-0 text-success">{{ session('success') }}</p>
                     @endif
-                    @if (session('error'))
-                        <p class="m-0 mt-3 p-0 text-danger">{{ session('error') }}</p>
-                    @endif
-                    <form method="POST" action="{{ route('post-reset-password', $kodeReset) }}">
+                    <div class="socialite-wrapper mb-3">
+                        <button type="submit" class="btn form-control btn-socialite main-radius">
+                            <i class="google-color fa-brands fa-google"></i>
+                            <strong>Daftar Dengan Google</strong>
+                        </button>
+                    </div>
+
+                    <div class="text-center my-3">
+                        <div class="or or--x" aria-role="presentation">Atau</div>
+                    </div>
+                    <form action="{{ URL::to('/postlogin') }}" method="post">
                         @csrf
                         <div class="form-group text-secondary">
                             <i class="fa fa-user" style="font-size: 12px"></i>
-                            <label for="wa" class="text-uppercase "><strong>wa</strong></label>
-                            <input name="wa" type="text" class="form-control border-0"
-                                placeholder="Masukkan wa anda">
+                            <label for="nama" class="text-uppercase "><strong>Nama</strong></label>
+                            <input name="nama" type="text" class="form-control border-0"
+                                placeholder="Masukkan nama anda">
 
+                        </div>
+                        <div class="form-group text-secondary">
+                            <i class="fa fa-user" style="font-size: 12px"></i>
+                            <label for="email" class="text-uppercase "><strong>Email</strong></label>
+                            <input name="email" type="text" class="form-control border-0"
+                                placeholder="Masukkan email anda">
+
+                        </div>
+                        <div class="form-group text-secondary">
+                            <i class="fa fa-key" style="font-size: 12px"></i>
+                            <label for="text" class="text-uppercase"><strong>Nama usaha</strong></label>
+                            <input name="text" type="text" class="form-control border-0" placeholder="Nama usaha">
+                        </div>
+                        <div class="form-group text-secondary">
+                            <i class="fa fa-key" style="font-size: 12px"></i>
+                            <label for="text" class="text-uppercase"><strong>Nomor telepon</strong></label>
+                            <input name="text" type="text" class="form-control border-0"
+                                placeholder="Nomor telepon">
                         </div>
                         <div class="form-group text-secondary">
                             <i class="fa fa-key" style="font-size: 12px"></i>
@@ -51,23 +77,15 @@
                             <input name="password" type="password" class="form-control border-0"
                                 placeholder="Masukkan password anda">
                         </div>
-                        <div class="form-group text-secondary">
-                            <i class="fa fa-key" style="font-size: 12px"></i>
-                            <label for="konfirmasi_password" class="text-uppercase"><strong>Konfirmasi
-                                    Password</strong></label>
-                            <input name="konfirmasi_password" type="password" class="form-control border-0"
-                                placeholder="konfirmasi password anda">
-                        </div>
-                        <a href="{{ URL::to('/login') }}" class="forgot"><u> Kembali ke halaman Login?</u></a>
-                        <button type="submit" class="btn btn-block login-button main-radius">Reset</button>
+                        <a href="{{ URL::to('/lupa-kata-sandi') }}" class="forgot"><u> Forgot Your Password?</u></a>
+                        <button type="submit" class="btn btn-block login-button main-radius">Login</button>
                     </form>
-                    <div class="copy-text">Copyright © 2022 ♦ .</div>
                 </div>
                 <div class="col-md-8 banner-sec d-flex flex-column text-center">
-                    <img src="{{ asset('img/login_img/login.png') }}" alt="" width="400">
-                    <p class="text-secondary"><strong>Villa & Resto</strong></p>
-                    <small class="px-5 text-secondary">Selamat datang di aplikasi pemantauan villa dan resto! Kami
-                        senang Anda sudah bergabung bersama kami. Silakan login untuk melanjutkan.</small>
+                    <img src="{{ asset('img/login_img/retail.png') }}" alt="" width="500">
+                    <p class="text-secondary"><strong>Pos</strong></p>
+                    <small class="pb-5 text-secondary">Kami hadir untuk menemani anda menjual, ayo gunakan pos, hanya
+                        tinggal satu klik sat set sot set your head.</small>
                 </div>
             </div>
     </section>
@@ -82,7 +100,8 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
         integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    {{-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> --}}
+    <script src="https://kit.fontawesome.com/3423f55a30.js" crossorigin="anonymous"></script>
 
     <script>
         $(document).ready(function() {

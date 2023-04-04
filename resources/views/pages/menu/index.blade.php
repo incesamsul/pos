@@ -97,6 +97,6 @@
 
 
         });
-        $('#limenu').addClass('active');
+        $('#liMenu').addClass('active');
     </script>
 @endsection

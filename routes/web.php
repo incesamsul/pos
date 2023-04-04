@@ -37,6 +37,7 @@ Route::get('/tentang_aplikasi', [Home::class, 'tentangAplikasi']);
 
 Route::group(['middleware' => ['guest']], function () {
     Route::get('/login', [LoginController::class, 'login'])->name('login');
+    Route::get('/register', [LoginController::class, 'register']);
 });
 
 // GENERAL CONTROLLER ROUTE
@@ -95,6 +96,7 @@ Route::group(['middleware' => ['auth', 'ceklevel:kasir']], function () {
         Route::get('/pos/kategori/{kategori}', [PosController::class, 'posKategori']);
         Route::get('/pos/cetak', [PosController::class, 'cetakPos']);
         Route::get('/pos/cetak/{id_transaksi_pos}', [PosController::class, 'cetakPos']);
+        Route::post('/pos/cari', [PosController::class, 'posCari']);
         Route::get('/transaksi_pos', [PosController::class, 'transaksiPos']);
         Route::get('/transaksi_pos/{id_transaksi_pos}', [PosController::class, 'detailTransaksiPos']);
         Route::post('/create_pos', [PosController::class, 'createPos']);

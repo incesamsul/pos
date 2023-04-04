@@ -45,5 +45,5 @@
     {{ sweetAlert(session('error'), 'warning') }}
 @endif
 <div class="loader">
-    <img src="{{ asset('img/svg_animated/loading.svg') }}" alt="loading">
+    <img src="{{ asset('img/svg_animated/loading.gif') }}" alt="loading">
 </div>

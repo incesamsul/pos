@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Villa & resto</title>
+    <title>Pos</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -33,7 +33,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Villa<span>Resto.</span></a>
+            <a class="navbar-brand" href="index.html">Pos<span>hehe.</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
@@ -45,7 +45,8 @@
                     <li class="nav-item"><a href="" class="nav-link">Villa</a></li>
                     <li class="nav-item"><a href="" class="nav-link">Resto</a></li>
                     <li class="nav-item"><a href="" class="nav-link">Contact</a></li>
-                    <li class="nav-item cta mr-md-2"><a href="{{ URL::to('/login') }}" class="nav-link">Login</a></li>
+                    <li class="nav-item cta mr-md-2"><a href="{{ URL::to('/register') }}" class="nav-link">Coba
+                            Gratis</a></li>
 
                 </ul>
             </div>
@@ -60,14 +61,14 @@
             <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start"
                 data-scrollax-parent="true">
                 <div class="col-xl-10 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-                    <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"> cari
-                        <br><span>Penginapan ?</span>
+                    <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"> Halo
+                        <br><span>Shoppers</span>
                     </h1>
-                    <p class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Villa and resto
+                    <p class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Pos
                     </p>
                     <div id="timer">
-                        <small class="text-sm">Kami menyediakan villa dan resto untuk pengunjung ayo berkunjung sekarang
-                            juga.</small>
+                        <small class="text-sm">Kami hadir membawa solusi agar kamu tidak jadul lagi saat menjual, kertas
+                            ? hadeh capeg.</small>
                     </div>
                     <!-- <div id="timer" class="d-flex mb-3">
       <div class="time" id="days"></div>
@@ -90,7 +91,7 @@
             <div class="row mb-5">
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2 text-white">Villa@resto</h2>
+                        <h2 class="ftco-heading-2 text-white">Pos</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, voluptates.</p>
                         <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                             <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>

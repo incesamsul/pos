@@ -46,7 +46,7 @@
                         @enddesktop
                         <li><small>pastikan mendapat balasan seperti gambar <a target="_blank"
                                     href="{{ asset('img/help/wa_reset_pass.png') }}">lihat</a></small></li>
-                        <li><small>setelah masukkan wa di form dibawah</small></li>
+                        <li><small>setelah itu masukkan wa di form dibawah</small></li>
                         <li><small>anda akan mendapatkan link seperti <a
                                     href="{{ asset('img/help/wa_reset_pass2.png') }}" target="_blank"
                                     rel="noopener noreferrer">ini</a></small></li>
@@ -55,7 +55,9 @@
                     @if ($response)
                         @if ($response == 200)
                             <p class="m-0 mt-3 p-0 text-success">wa reset password telah dikirim ke wa anda, <span
-                                    class="text-warning">Jika tidak masuk klik disini</span></p>
+                                    class="text-warning">Jika tidak masuk klik <a target="_blank"
+                                        href="http://wa.me/+14155238886?text=join%20breathe-report">disini</a></span>
+                            </p>
                         @elseif ($response == 500)
                             <p class="m-0 mt-3 p-0 text-danger">Terjadi kesalahan ...</p>
                         @else
@@ -82,7 +84,7 @@
 
                         </div>
                         <a href="{{ URL::to('/login') }}" class="forgot"><u> Kembali ke halaman Login?</u></a>
-                        <button type="submit" class="btn-block login-button">Kirim</button>
+                        <button type="submit" class="btn btn-block login-button main-radius">Kirim</button>
                     </form>
                     <div class="copy-text">Copyright © 2022 ♦ .</div>
                 </div>

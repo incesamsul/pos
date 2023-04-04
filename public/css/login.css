@@ -21,7 +21,7 @@ body {
 }
 
 .form-control:focus {
-    border-color: #9F6162;
+    border-color: #AE7866;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 140, 255, 0.6);
 }
 
@@ -29,7 +29,6 @@ body {
     background-color: #f3f3f3;
     width: 100vw;
     height: 100%;
-    overflow: hidden;
 }
 
 .login-wrapper input {
@@ -50,14 +49,35 @@ body {
 }
 
 .login-sec {
-    padding: 30px 30px;
+    overflow: auto;
+    padding: 170px 70px 70px 70px;
     position: relative;
-    min-height: 100vh;
+    max-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     /* align-items: center; */
 }
+
+.login-sec::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+.login-sec::-webkit-scrollbar-thumb {
+    background-color: #F3F3F3;
+    border-radius: 4px;
+}
+
+.login-sec:hover::-webkit-scrollbar-thumb {
+    background-color: #eee !important;
+}
+
+.login-sec:hover::-webkit-scrollbar {
+    display: block;
+}
+
+
 
 .banner-sec {
     background-color: #70413218;
@@ -106,7 +126,7 @@ body {
 }
 
 .login-sec .copy-text a:hover {
-    color: #9F6162;
+    color: #AE7866;
     text-decoration: underline;
 }
 
@@ -114,29 +134,47 @@ body {
     margin-bottom: 20px;
     font-weight: 800;
     font-size: 30px;
-    color: #9F6162;
+    color: #AE7866;
 }
 
 
 
 .login-button {
-    background: #9F6162;
+    background: #AE7866;
     border: 1px solid transparent;
-    height: 40px;
     color: #fff;
     font-weight: 600;
     font-size: 18px;
-    background: -webkit-linear-gradient(right, #9F6162, #6e3535, #9F6162);
-    background: -o-linear-gradient(right, #9F6162, #9F6162, #9F6162);
-    background: linear-gradient(right, #9F6162, #9F6162, #9F6162);
+    background: -webkit-linear-gradient(right, #AE7866, #7e4e3e, #AE7866);
+    background: -o-linear-gradient(right, #AE7866, #AE7866, #AE7866);
+    background: linear-gradient(right, #AE7866, #AE7866, #AE7866);
     background-size: 250% 100%;
     background-position: 100% 50%;
     transition: 0.6s;
     cursor: pointer;
-    border-radius: 10px;
     margin-top: 20px;
 }
 
+.btn-socialite {
+    /* border: 1px solid #6e3535; */
+}
+
+.btn-socialite:hover {
+    background-color: #6e35351a;
+}
+
+.main-radius {
+    border-radius: 13px;
+}
+
+.text-main {
+    color: #7e4e3e;
+}
+
+.btn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
 
 .login-button:hover,
@@ -175,6 +213,7 @@ body {
 @media only screen and (max-width: 1100px) {
     .col-md-4.login-sec {
         float: left;
+        padding: 30px 30px;
         flex: 0 0 100%;
         min-width: 100%
     }
@@ -186,4 +225,81 @@ body {
     .banner-sec {
         display: none !important;
     }
+}
+
+.google-color {
+    background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* divider */
+
+
+/* Base styles */
+.or::before,
+.or::after {
+    content: "";
+}
+
+/*
+    Vertical
+    Requires a height to be set on this element or its parent.
+*/
+.or--y {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+}
+
+/*
+    Absolutely position each pseudo element, and calculate
+    a height shorter than 50% using em units to create space
+    around the text and allows divider line height to scale
+    based on parent element divider height.
+*/
+.or--y::before,
+.or--y::after {
+    position: absolute;
+    border-left: 1px solid #ccc;
+    height: calc(50% - 0.85em);
+    left: 50%;
+    margin-left: -1px;
+}
+
+/* ::before on top */
+.or--y::before {
+    top: 0;
+}
+
+/* ::after on bottom */
+.or--y::after {
+    bottom: 0;
+}
+
+/* Horizontal */
+.or--x::before,
+.or--x::after {
+    position: relative;
+    border-top: 1px solid #ccc;
+    display: inline-block;
+    vertical-align: middle;
+    width: 40%;
+    margin-bottom: 0.15em;
+    overflow: hidden;
+}
+
+.or--x::before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+
+.or--x::after {
+    left: 0.5em;
+    margin-right: -50%;
 }

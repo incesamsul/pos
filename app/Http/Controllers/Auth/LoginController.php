@@ -15,6 +15,11 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
+    public function register()
+    {
+        return view('auth.register');
+    }
+
     public function postLogin(Request $request)
     {
         $user = User::where('email', $request->email)
